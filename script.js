@@ -158,9 +158,9 @@ document.querySelectorAll(".link").forEach(btn => {
     btn.addEventListener("click", function(e) {
         e.preventDefault();
 
-        smoother.scrollTo("#valor", {
-            duration: 1.2,
-            ease: "power3.out"
+        document.querySelector("#valor").scrollIntoView({
+            behavior: "smooth",
+            block: "start"
         });
     });
 });
