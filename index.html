@@ -12,7 +12,6 @@
         rel="stylesheet" media="print" onload="this.media='all'">
 
     <style>
-
         html {
             scroll-behavior: smooth;
         }
@@ -71,20 +70,18 @@
             text-decoration: none;
         }
 
-        /* Prepara os elementos para a animação do GSAP */
         .blur-up,
         .blur-down,
         .blur-left,
         .blur-right {
             opacity: 0;
-            visibility: hidden;
+            will-change: transform, opacity;
         }
 
         /* Esconde o texto até o GSAP assumir o controle */
         .split-chars,
         .split-words {
             opacity: 0;
-            visibility: hidden;
         }
 
         .secao-10 .carrossel-itens ul {
@@ -93,12 +90,7 @@
             will-change: transform;
         }
 
-        .blur-up,
-        .blur-down,
-        .blur-left,
-        .blur-right {
-            will-change: transform, opacity;
-        }
+
 
 
 

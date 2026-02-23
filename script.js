@@ -67,10 +67,15 @@ btnPrev.addEventListener('click', () => moveCarousel('prev'));
 
 
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
+
+// ==============================
+// ANIMAÇÕES DE ENTRADA
+// ==============================
 
 function animateEntry(selector, initialProps) {
-  gsap.utils.toArray(selector).forEach(el => {
+  document.querySelectorAll(selector).forEach(el => {
+
     gsap.fromTo(
       el,
       {
@@ -88,10 +93,12 @@ function animateEntry(selector, initialProps) {
         scrollTrigger: {
           trigger: el,
           start: "top 85%",
-          once: true
+          once: true,
+          invalidateOnRefresh: true
         }
       }
     );
+
   });
 }
 
@@ -101,57 +108,84 @@ animateEntry(".blur-left", { x: 60 });
 animateEntry(".blur-right",{ x: -60 });
 
 
+// ==============================
+// SPLIT TYPE
+// ==============================
 
-
-
-// ==========================================
-// ANIMAÇÕES DE TEXTO (SplitType + GSAP)
-// ==========================================
-
-// Trava de segurança: Espera as fontes carregarem antes de fatiar o texto
 document.fonts.ready.then(() => {
 
-    // 1. Revelação Letra por Letra (.split-chars)
-    gsap.utils.toArray('.split-chars').forEach(elemento => {
-        gsap.set(elemento, { autoAlpha: 1 });
-        const textoFatiado = new SplitType(elemento, { types: 'chars' });
+  // ===== CHARS =====
+  document.querySelectorAll('.split-chars').forEach(el => {
 
-        gsap.from(textoFatiado.chars, {
-            opacity: 0,
-            y: 30,
-            rotateX: -90,
-            duration: 0.8,
-            stagger: 0.03,
-            ease: "back.out(1.7)",
-            scrollTrigger: {
-                trigger: elemento,
-                start: "top 85%",
-                once: true
-            }
+    const split = new SplitType(el, { types: 'chars' });
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 90%",   // dispara assim que entra
+      once: true,
+      onEnter: () => {
+
+        gsap.to(el, { opacity: 1, duration: 0 }); // revela container
+
+        gsap.from(split.chars, {
+          opacity: 0,
+          y: 30,
+          rotateX: -90,
+          duration: 0.8,
+          stagger: 0.03,
+          ease: "back.out(1.7)"
         });
+
+      }
     });
 
-    // 2. Revelação Palavra por Palavra (.split-words)
-    gsap.utils.toArray('.split-words').forEach(elemento => {
-        gsap.set(elemento, { autoAlpha: 1 });
-        const textoFatiado = new SplitType(elemento, { types: 'words' });
+  });
 
-        gsap.from(textoFatiado.words, {
-            opacity: 0,
-            y: 20,
-            filter: "blur(8px)",
-            duration: 1,
-            stagger: 0.06,
-            ease: "power3.out",
-            scrollTrigger: {
-                trigger: elemento,
-                start: "top 85%",
-                once: true
-            }
+
+  // ===== WORDS =====
+  document.querySelectorAll('.split-words').forEach(el => {
+
+    const split = new SplitType(el, { types: 'words' });
+
+    ScrollTrigger.create({
+      trigger: el,
+      start: "top 90%",
+      once: true,
+      onEnter: () => {
+
+        gsap.to(el, { opacity: 1, duration: 0 });
+
+        gsap.from(split.words, {
+          opacity: 0,
+          y: 20,
+          duration: 1,
+          stagger: 0.06,
+          ease: "power3.out"
         });
+
+      }
     });
 
-}); // <-- Fim da trava de segurança das fontes
+  });
+
+  ScrollTrigger.refresh();
+});
+
+
+// ==============================
+// SCROLL SUAVE
+// ==============================
+
+document.querySelectorAll(".link").forEach(btn => {
+  btn.addEventListener("click", function(e) {
+    e.preventDefault();
+
+    document.querySelector("#valor").scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+  });
+});
 
 
 document.querySelectorAll(".link").forEach(btn => {
