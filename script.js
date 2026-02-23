@@ -67,12 +67,7 @@ btnPrev.addEventListener('click', () => moveCarousel('prev'));
 
 
 
-gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
-const smoother = ScrollSmoother.create({
-    smooth: 1,
-    effects: true,
-    smoothTouch: 0.1
-});
+gsap.registerPlugin(ScrollTrigger)
 
 function animateEntry(selector, initialProps) {
   gsap.utils.toArray(selector).forEach(el => {
