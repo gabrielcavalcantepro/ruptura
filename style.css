@@ -27,6 +27,19 @@ body {
     visibility: hidden;
 }
 
+.secao-10 .carrossel-itens ul {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  will-change: transform;
+}
+
+.blur-up,
+.blur-down,
+.blur-left,
+.blur-right {
+  will-change: transform, opacity;
+}
+
 
 
 /*------ CELULAR ------*/

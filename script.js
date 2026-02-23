@@ -1,87 +1,68 @@
 const carouselUl = document.querySelector('.secao-10 .carrossel-itens ul');
-
 const btnPrev = document.querySelector('.secao-10 .prev');
-
 const btnNext = document.querySelector('.secao-10 .next');
 
-
-
 let isMoving = false;
+let itemWidth;
 
+// Pega os itens uma única vez
+let items = carouselUl.children;
 
+// Calcula largura apenas quando necessário
+function updateWidth() {
+    if (items.length > 0) {
+        itemWidth = items[0].getBoundingClientRect().width + 40;
+    }
+}
+
+// Calcula no load
+updateWidth();
+
+// Recalcula apenas no resize
+window.addEventListener('resize', updateWidth);
 
 function moveCarousel(direction) {
-
-    if (isMoving) return; // Evita bugs de cliques múltiplos rápidos
-
+    if (isMoving) return;
     isMoving = true;
-
-
-
-    const items = document.querySelectorAll('.secao-10 .carrossel-itens ul li');
-
-    const itemWidth = items[0].offsetWidth + 40; // Largura do li + gap (40px)
-
-
 
     if (direction === 'next') {
 
-        // 1. Move a lista para a esquerda
-
-        carouselUl.style.transition = 'transform 0.5s ease-in-out';
-
         carouselUl.style.transform = `translateX(-${itemWidth}px)`;
 
+        carouselUl.addEventListener('transitionend', function handler() {
+            carouselUl.removeEventListener('transitionend', handler);
 
-
-        // 2. Espera a animação acabar, move o primeiro item pro final e reseta posição
-
-        setTimeout(() => {
-
+            carouselUl.appendChild(carouselUl.firstElementChild);
             carouselUl.style.transition = 'none';
+            carouselUl.style.transform = 'translateX(0)';
 
-            carouselUl.appendChild(items[0]); // Move o primeiro elemento para o fim
-
-            carouselUl.style.transform = `translateX(0)`;
-
-            isMoving = false;
-
-        }, 500);
-
-
-
-    } else {
-
-        // 1. Move o último item para o início instantaneamente
-
-        carouselUl.style.transition = 'none';
-
-        carouselUl.prepend(items[items.length - 1]);
-
-
-
-        // 2. Desloca a lista negativamente para manter a visão visual parada
-
-        carouselUl.style.transform = `translateX(-${itemWidth}px)`;
-
-
-
-        // 3. Força um reflow e anima de volta para o zero
-
-        setTimeout(() => {
+            // Força reflow mínimo controlado
+            carouselUl.offsetHeight;
 
             carouselUl.style.transition = 'transform 0.5s ease-in-out';
 
-            carouselUl.style.transform = `translateX(0)`;
-        }, 10);
-        setTimeout(() => {
             isMoving = false;
-        }, 510);
+        });
+
+    } else {
+
+        carouselUl.style.transition = 'none';
+        carouselUl.prepend(carouselUl.lastElementChild);
+        carouselUl.style.transform = `translateX(-${itemWidth}px)`;
+
+        requestAnimationFrame(() => {
+            carouselUl.style.transition = 'transform 0.5s ease-in-out';
+            carouselUl.style.transform = 'translateX(0)';
+        });
+
+        carouselUl.addEventListener('transitionend', function handler() {
+            carouselUl.removeEventListener('transitionend', handler);
+            isMoving = false;
+        });
     }
 }
 
 btnNext.addEventListener('click', () => moveCarousel('next'));
-
 btnPrev.addEventListener('click', () => moveCarousel('prev'));
 
 
@@ -93,64 +74,36 @@ const smoother = ScrollSmoother.create({
     smoothTouch: 0.1
 });
 
-// ==========================================
-// ANIMAÇÕES DE ENTRADA COM BLUR
-// ==========================================
-
-// 1. De baixo para cima
-gsap.utils.toArray('.blur-up').forEach(elemento => {
-    gsap.fromTo(elemento,
-        { y: 60, autoAlpha: 0, filter: "blur(12px)" }, // Estado Inicial
-        {
-            y: 0,
-            autoAlpha: 1,
-            filter: "blur(0px)", // Estado Final
-            duration: 1.2,
-            ease: "power3.out", // Suavidade no final do movimento
-            scrollTrigger: {
-                trigger: elemento,
-                start: "top 85%", // Dispara quando o topo do elemento atinge 85% da altura da tela
-                once: true // Anima apenas na entrada
-            }
+function animateEntry(selector, initialProps) {
+  gsap.utils.toArray(selector).forEach(el => {
+    gsap.fromTo(
+      el,
+      {
+        ...initialProps,
+        autoAlpha: 0,
+        scale: 0.98
+      },
+      {
+        x: 0,
+        y: 0,
+        autoAlpha: 1,
+        scale: 1,
+        duration: 1,
+        ease: "power3.out",
+        scrollTrigger: {
+          trigger: el,
+          start: "top 85%",
+          once: true
         }
+      }
     );
-});
+  });
+}
 
-// 2. De cima para baixo
-gsap.utils.toArray('.blur-down').forEach(elemento => {
-    gsap.fromTo(elemento,
-        { y: -60, autoAlpha: 0, filter: "blur(12px)" },
-        {
-            y: 0, autoAlpha: 1, filter: "blur(0px)",
-            duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: elemento, start: "top 85%", once: true }
-        }
-    );
-});
-
-// 3. Da direita para a esquerda (blur-left)
-gsap.utils.toArray('.blur-left').forEach(elemento => {
-    gsap.fromTo(elemento,
-        { x: 60, autoAlpha: 0, filter: "blur(12px)" }, // Começa 60px à direita
-        {
-            x: 0, autoAlpha: 1, filter: "blur(0px)", // Termina na posição original (0)
-            duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: elemento, start: "top 85%", once: true }
-        }
-    );
-});
-
-// 4. Da esquerda para a direita (blur-right)
-gsap.utils.toArray('.blur-right').forEach(elemento => {
-    gsap.fromTo(elemento,
-        { x: -60, autoAlpha: 0, filter: "blur(12px)" }, // Começa -60px à esquerda
-        {
-            x: 0, autoAlpha: 1, filter: "blur(0px)",
-            duration: 1.2, ease: "power3.out",
-            scrollTrigger: { trigger: elemento, start: "top 85%", once: true }
-        }
-    );
-});
+animateEntry(".blur-up",   { y: 60 });
+animateEntry(".blur-down", { y: -60 });
+animateEntry(".blur-left", { x: 60 });
+animateEntry(".blur-right",{ x: -60 });
 
 
 
