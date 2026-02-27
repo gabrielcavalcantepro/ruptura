@@ -16,6 +16,11 @@
             scroll-behavior: smooth;
         }
 
+        html,
+        body {
+            overflow-x: hidden;
+        }
+
 
         * {
             margin: 0;
@@ -26,6 +31,7 @@
         body {
             background-color: #f5f5f5;
             color: #D9D9D9;
+            overflow-x: hidden;
         }
 
 
@@ -94,7 +100,7 @@
 
 
 
-        /*------ CELULAR ------*/
+        /*------ CELULAR PEQUENOS ------*/
 
         /*--- PRÉ-DEFINIDOS ---*/
 
@@ -149,8 +155,8 @@
 
         .faixa h2 {
             width: 90%;
-            font-size: 20px;
-            line-height: 25px;
+            font-size: 25px;
+            line-height: 30px;
             text-align: center;
         }
 
@@ -173,7 +179,7 @@
             font-family: 'Sora', sans-serif;
             margin-top: 50px;
             font-weight: 600;
-            font-size: 16px;
+            font-size: 15px;
             text-align: center;
             text-transform: uppercase;
             text-decoration: none;
@@ -245,6 +251,8 @@
 
 
 
+        /* HERO */
+
         .secao-1 .content .content-secao-1 img {
             width: 240px;
         }
@@ -282,13 +290,13 @@
             background-image: url(/images/fundo2-m.webp);
             background-repeat: no-repeat;
             background-size: cover;
-            background-position: right;
+            background-position: center;
             border-top: solid 2px #202020;
         }
 
         .secao-2 .content {
             justify-content: end;
-            padding-bottom: 40px;
+            padding-bottom: 60px;
         }
 
         .secao-2 .content h2 {
@@ -393,7 +401,7 @@
 
         .secao-5 .content {
             justify-content: end;
-            padding: 60px 0px;
+            padding-bottom: 60px;
         }
 
         .secao-5 .content h2 {
@@ -435,15 +443,14 @@
 
         .secao-6 .content .conteudo h2 {
             color: #151515;
-            line-height: 30px;
-            margin-top: 10px;
+            margin: 10px 0px;
         }
 
         .secao-6 .content .conteudo h2 span {
             color: #F53030;
             font-size: 25px;
-            line-height: 30px;
             font-weight: 700;
+            margin: 0;
         }
 
         .secao-6 .content .conteudo p {
@@ -457,7 +464,7 @@
             font-family: Playfair Display;
             font-weight: 500;
             color: #434343;
-            margin: 20px 0px;
+            margin: 15px 0px;
 
         }
 
@@ -751,6 +758,7 @@
         .secao-11 .content ul li img {
             width: 227px;
             height: 227px;
+            border-radius: 20px;
         }
 
         .secao-11 .content ul li .content-bonus {
@@ -883,7 +891,11 @@
         }
 
         .secao-12 .content .garantia h2 {
-            width: 350px;
+            width: 100%;
+        }
+
+        .secao-12 .content .garantia h2 span {
+            margin-left: 10px;
         }
 
         .secao-12 .content .garantia p {
@@ -909,6 +921,8 @@
 
         .secao-13 .content h2 {
             color: #151515;
+            text-align: center;
+            width: 100%;
         }
 
         .secao-13 .content .escolhas-itens {
@@ -1086,8 +1100,10 @@
             color: #737373;
         }
 
-        /*------ CELULARES PEQUENOS ------*/
-        @media (min-width: 320px) {
+
+
+        /*------ CELULARES MÉDIOS ------*/
+        @media (min-width: 430px) {
             /*--- PRÉ-DEFINIDOS ---*/
 
             /* CENTRO DE CONTEÚDO */
@@ -1141,8 +1157,8 @@
 
             .faixa h2 {
                 width: 90%;
-                font-size: 25px;
-                line-height: 30px;
+                font-size: 20px;
+                line-height: 25px;
                 text-align: center;
             }
 
@@ -1165,7 +1181,7 @@
                 font-family: 'Sora', sans-serif;
                 margin-top: 50px;
                 font-weight: 600;
-                font-size: 15px;
+                font-size: 16px;
                 text-align: center;
                 text-transform: uppercase;
                 text-decoration: none;
@@ -1237,8 +1253,6 @@
 
 
 
-            /* HERO */
-
             .secao-1 .content .content-secao-1 img {
                 width: 240px;
             }
@@ -1276,13 +1290,13 @@
                 background-image: url(/images/fundo2-m.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: right;
                 border-top: solid 2px #202020;
             }
 
             .secao-2 .content {
                 justify-content: end;
-                padding-bottom: 40px;
+                padding-bottom: 60px;
             }
 
             .secao-2 .content h2 {
@@ -1324,7 +1338,6 @@
             }
 
             .secao-3 .content ul li {
-                width: 100%;
                 background: linear-gradient(100deg, #E0E0E0, #e0e0e000);
                 border: solid 1px #D8D8D8;
                 border-radius: 100px;
@@ -1387,7 +1400,7 @@
 
             .secao-5 .content {
                 justify-content: end;
-                padding: 60px 0px;
+                padding-bottom: 60px;
             }
 
             .secao-5 .content h2 {
@@ -1429,14 +1442,15 @@
 
             .secao-6 .content .conteudo h2 {
                 color: #151515;
-                margin: 10px 0px;
+                line-height: 30px;
+                margin-top: 10px;
             }
 
             .secao-6 .content .conteudo h2 span {
                 color: #F53030;
                 font-size: 25px;
+                line-height: 30px;
                 font-weight: 700;
-                margin: 0;
             }
 
             .secao-6 .content .conteudo p {
@@ -1450,7 +1464,7 @@
                 font-family: Playfair Display;
                 font-weight: 500;
                 color: #434343;
-                margin: 15px 0px;
+                margin: 20px 0px;
 
             }
 
@@ -1876,11 +1890,7 @@
             }
 
             .secao-12 .content .garantia h2 {
-                width: 100%;
-            }
-
-            .secao-12 .content .garantia h2 span {
-                margin-left: 10px;
+                width: 350px;
             }
 
             .secao-12 .content .garantia p {
@@ -1906,8 +1916,6 @@
 
             .secao-13 .content h2 {
                 color: #151515;
-                text-align: center;
-                width: 100%;
             }
 
             .secao-13 .content .escolhas-itens {
@@ -2084,11 +2092,11 @@
                 text-align: center;
                 color: #737373;
             }
-
         }
 
+
         /*------ TABLET ------*/
-        @media (min-width: 768px) {
+        @media (min-width: 431px) and (max-width: 768px) {
             /*--- PRÉ-DEFINIDOS ---*/
 
             /* CENTRO DE CONTEÚDO */
@@ -2283,7 +2291,7 @@
 
             .secao-2 .content {
                 justify-content: end;
-                padding: 0px 0px 80px 0px;
+                padding-bottom: 80px;
 
             }
 
@@ -2324,8 +2332,6 @@
             }
 
             .secao-3 .content ul li {
-                width: 450px;
-                height: 100px;
                 background: linear-gradient(100deg, #E0E0E0, #e0e0e000);
                 border: solid 1px #D8D8D8;
                 border-radius: 100px;
@@ -2381,11 +2387,11 @@
                 background-size: cover;
                 background-position: center;
                 border-top: solid 2px #202020;
+                padding-bottom: 80px;
             }
 
             .secao-5 .content {
                 justify-content: end;
-                padding: 0px 0px 80px 0px;
 
             }
 
@@ -2567,11 +2573,11 @@
                 background-size: cover;
                 background-position: center;
                 border-top: solid 2px #202020;
+                padding-bottom: 80px;
             }
 
             .secao-9 .content {
                 justify-content: end;
-                padding: 0px 0px 80px 0px;
 
             }
 
@@ -3085,13 +3091,14 @@
 
         }
 
+
         /*------ NOTEBOOK PEQUENO ------*/
         @media (min-width: 1024px) {
             /*--- PRÉ-DEFINIDOS ---*/
 
             /* CENTRO DE CONTEÚDO */
             .content {
-                width: 75%;
+                width: 80%;
                 height: 100%;
                 margin: 0 auto;
                 display: flex;
@@ -3104,10 +3111,10 @@
             /* TEXTOS */
             h2 {
                 font-family: Playfair Display;
-                font-size: 35px;
+                font-size: 30px;
                 font-weight: 500;
                 color: #D9D9D9;
-                line-height: 50px;
+                line-height: 40px;
             }
 
             h2 span {
@@ -3118,10 +3125,10 @@
 
             p {
                 font-family: Sora;
-                font-size: 18px;
+                font-size: 15px;
                 color: #B9B9B9;
                 font-weight: 200;
-                line-height: 28px;
+                line-height: 20px;
             }
 
 
@@ -3252,12 +3259,12 @@
 
 
             .content-secao-1 h1 {
-                font-size: 50px;
+                font-size: 40px;
                 text-align: center;
                 width: 713px;
                 font-family: Playfair Display;
                 font-weight: 400;
-                line-height: 60px;
+                line-height: 50px;
                 margin-top: 40px;
             }
 
@@ -3276,12 +3283,13 @@
                 background-image: url(/images/fundo2.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 70% center;
                 border-top: solid 2px #202020;
             }
 
             .secao-2 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-2 .content h2 {
@@ -3317,12 +3325,10 @@
                 flex-direction: row;
                 justify-content: center;
                 margin-top: 40px;
-                gap: 20px;
             }
 
             .secao-3 .content ul li {
-                width: 450px;
-                height: 100px;
+                width: 48%;
                 background: linear-gradient(100deg, #E0E0E0, #e0e0e000);
                 border: solid 1px #D8D8D8;
                 border-radius: 100px;
@@ -3376,11 +3382,12 @@
                 background-image: url(/images/fundo5.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 80% center;
             }
 
             .secao-5 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-5 .content h2 {
@@ -3406,15 +3413,15 @@
             .secao-6 .content {
                 flex-direction: row;
                 flex-wrap: wrap;
-                gap: 60px;
-                justify-content: center;
+                gap: 0px;
+                justify-content: space-between;
                 align-items: center;
 
             }
 
             .secao-6 .content .conteudo {
                 height: 100%;
-                width: 90%;
+                width: 52%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -3456,7 +3463,8 @@
             }
 
             .secao-6 .content img {
-                width: 90%;
+                width: 48%;
+                max-width: 100%;
 
             }
 
@@ -3474,13 +3482,13 @@
             .secao-7 .content {
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
 
             }
 
             .secao-7 .content .conteudo {
                 height: 100%;
-                width: 90%;
+                width: 52%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -3498,7 +3506,8 @@
             }
 
             .secao-7 .content img {
-                width: 90%;
+                width: 40%;
+                max-width: 100%;
             }
 
 
@@ -3519,13 +3528,13 @@
             .secao-8 .content {
                 flex-direction: row-reverse;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
 
             }
 
             .secao-8 .content .conteudo {
                 height: 100%;
-                width: 90%;
+                width: 52%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -3542,7 +3551,8 @@
             }
 
             .secao-8 .content img {
-                width: 90%;
+                width: 40%;
+                max-width: 100%;
             }
 
 
@@ -3559,13 +3569,14 @@
                 background-image: url(/images/fundo11.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 70% center;
                 border-top: solid 2px #202020;
                 border-bottom: solid 2px #202020;
             }
 
             .secao-9 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-9 .content h2 {
@@ -3736,16 +3747,16 @@
                 padding: 30px 28px;
                 border: solid 1px #B5B5B5;
                 border-radius: 20px;
-                width: 450px;
+                width: 40%;
             }
 
             .secao-11 .content ul li img {
-                width: 40%;
-                height: 100%;
+                width: 200px;
+                height: 200px;
             }
 
             .secao-11 .content ul li .content-bonus {
-                width: 50%;
+                width: 100%;
             }
 
             .secao-11 .content ul li .content-bonus h3 {
@@ -4080,7 +4091,7 @@
 
 
         /*------ DESKTOP ------*/
-        @media (min-width: 1280px) {
+        @media (min-width: 1140px) {
             /*--- PRÉ-DEFINIDOS ---*/
 
             /* CENTRO DE CONTEÚDO */
@@ -4270,12 +4281,13 @@
                 background-image: url(/images/fundo2.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 57% center;
                 border-top: solid 2px #202020;
             }
 
             .secao-2 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-2 .content h2 {
@@ -4285,7 +4297,6 @@
             .secao-2 .content p {
                 width: 420px;
                 margin-top: 15px;
-                margin-bottom: 15px;
             }
 
 
@@ -4315,8 +4326,7 @@
             }
 
             .secao-3 .content ul li {
-                width: 450px;
-                height: 100px;
+                width: 48%;
                 background: linear-gradient(100deg, #E0E0E0, #e0e0e000);
                 border: solid 1px #D8D8D8;
                 border-radius: 100px;
@@ -4370,11 +4380,12 @@
                 background-image: url(/images/fundo5.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 80% center;
             }
 
             .secao-5 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-5 .content h2 {
@@ -4449,6 +4460,7 @@
 
             .secao-6 .content img {
                 width: 50%;
+                max-width: 100%;
 
             }
 
@@ -4466,7 +4478,8 @@
             .secao-7 .content {
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
+                gap: 0;
 
             }
 
@@ -4490,8 +4503,8 @@
             }
 
             .secao-7 .content img {
-                width: 510px;
-                height: 760px;
+                width: 50%;
+                max-width: 100%;
             }
 
 
@@ -4522,7 +4535,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                justify-content: center;
+                justify-content: space-between;
             }
 
             .secao-8 .content .conteudo h2 {
@@ -4535,8 +4548,8 @@
             }
 
             .secao-8 .content img {
-                width: 510px;
-                height: 933px;
+                width: 50%;
+                max-width: 100%;
             }
 
 
@@ -4560,6 +4573,7 @@
 
             .secao-9 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-9 .content h2 {
@@ -4767,9 +4781,9 @@
 
             .secao-12 .content {
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
                 flex-direction: row;
-                gap: 100px;
+                gap: 0px;
             }
 
             .secao-12 .content .valor {
@@ -4812,7 +4826,7 @@
             .secao-12 .content .valor h4 {
                 color: #f5f5f5;
                 font-family: Sora;
-                font-size: 60px;
+                font-size: 50px;
                 line-height: 65px;
                 margin-top: 5px;
             }
@@ -4859,7 +4873,7 @@
             }
 
             .secao-12 .content .garantia {
-                width: 40%;
+                width: 44%;
                 display: flex;
                 flex-direction: column;
                 align-items: flex-start;
@@ -4917,7 +4931,7 @@
 
             .secao-13 .content .escolhas-itens .escolha p {
                 font-family: Sora;
-                font-size: 25px;
+                font-size: 20px;
                 color: #282828;
                 font-weight: 600;
                 line-height: 45px;
@@ -4935,7 +4949,7 @@
                 align-items: center;
                 gap: 15px;
                 font-family: Sora;
-                font-size: 20px;
+                font-size: 18px;
                 color: #616161;
                 padding: 30px 15px;
                 font-weight: 300;
@@ -5067,8 +5081,9 @@
 
         }
 
+
         /*------ DESKTOP FULL HD ------*/
-        @media (min-width: 1140px) {
+        @media (min-width: 1280px) {
             /*--- PRÉ-DEFINIDOS ---*/
 
             /* CENTRO DE CONTEÚDO */
@@ -5257,12 +5272,13 @@
                 background-image: url(/images/fundo2.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 40% center;
                 border-top: solid 2px #202020;
             }
 
             .secao-2 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-2 .content h2 {
@@ -5271,8 +5287,6 @@
 
             .secao-2 .content p {
                 width: 420px;
-                margin-top: 15px;
-                margin-bottom: 15px;
             }
 
 
@@ -5302,8 +5316,7 @@
             }
 
             .secao-3 .content ul li {
-                width: 519px;
-                height: 100px;
+                width: 48%;
                 background: linear-gradient(100deg, #E0E0E0, #e0e0e000);
                 border: solid 1px #D8D8D8;
                 border-radius: 100px;
@@ -5313,7 +5326,7 @@
                 flex-direction: row;
                 color: #434343;
                 font-family: Sora;
-                font-size: 18px;
+                font-size: 16px;
                 font-weight: 250;
                 gap: 20px;
                 padding: 19px 56px 19px 30px;
@@ -5357,11 +5370,12 @@
                 background-image: url(/images/fundo5.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 75% center;
             }
 
             .secao-5 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-5 .content h2 {
@@ -5453,7 +5467,7 @@
             .secao-7 .content {
                 flex-direction: row;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
 
             }
 
@@ -5499,7 +5513,7 @@
             .secao-8 .content {
                 flex-direction: row-reverse;
                 align-items: center;
-                justify-content: center;
+                justify-content: space-between;
 
             }
 
@@ -5540,13 +5554,14 @@
                 background-image: url(/images/fundo11.webp);
                 background-repeat: no-repeat;
                 background-size: cover;
-                background-position: center;
+                background-position: 55% center;
                 border-top: solid 2px #202020;
                 border-bottom: solid 2px #202020;
             }
 
             .secao-9 .content {
                 justify-content: center;
+                padding-bottom: 0 !important;
             }
 
             .secao-9 .content h2 {
@@ -5904,7 +5919,7 @@
 
             .secao-13 .content .escolhas-itens .escolha p {
                 font-family: Sora;
-                font-size: 25px;
+                font-size: 20px;
                 color: #282828;
                 font-weight: 600;
                 line-height: 45px;
@@ -5922,11 +5937,12 @@
                 align-items: center;
                 gap: 15px;
                 font-family: Sora;
-                font-size: 20px;
+                font-size: 18px;
                 color: #616161;
                 padding: 30px 15px;
                 font-weight: 300;
-                border-bottom: 2px dashed #C8C8C8;
+                border-bottom: 1px dashed #C8C8C8;
+                width: 100%;
             }
 
             .secao-13 .content .escolhas-itens .escolha ul .sem-dashed {
@@ -6351,7 +6367,7 @@
                     </h2>
                     <ul>
                         <li class="blur-right">
-                            <img src="/images/imgbonus.webp" alt="">
+                            <img src="/images/bonus1.jpg.webp" alt="">
                             <div class="content-bonus">
                                 <h3>
                                     Diário da Liberdade (PDF Prático)
@@ -6363,7 +6379,7 @@
                             </div>
                         </li>
                         <li class="blur-left">
-                            <img src="/images/imgbonus.webp" alt="">
+                            <img src="/images/bonus2.jpg.webp" alt="">
                             <div class="content-bonus">
                                 <h3>
                                     Checklist 10 Sinais de Que Você Está Emocionalmente Livre
@@ -6374,25 +6390,14 @@
                             </div>
                         </li>
                         <li class="blur-right">
-                            <img src="/images/imgbonus.webp" alt="">
+                            <img src="/images/bonus3.jpg.webp" alt="">
                             <div class="content-bonus">
                                 <h3>
-                                    Diário da Liberdade (PDF Prático)
+                                    Atualizações Semanais Exclusivas
                                 </h3>
                                 <p>
-                                    Exercícios diários de desprogramação. Você vai registrar sua evolução e consolidar a
-                                    libertação.
-                                </p>
-                            </div>
-                        </li>
-                        <li class="blur-left">
-                            <img src="/images/imgbonus.webp" alt="">
-                            <div class="content-bonus">
-                                <h3>
-                                    Checklist 10 Sinais de Que Você Está Emocionalmente Livre
-                                </h3>
-                                <p>
-                                    Pra você saber com clareza quando o vínculo foi cortado de verdade.
+                                    Toda semana, uma nova aula é liberada para aprofundar seu desenvolvimento e manter
+                                    você em constante evolução.
                                 </p>
                             </div>
                         </li>
@@ -6445,7 +6450,7 @@
                                 Pagamento Seguro
                             </li>
                         </ul>
-                        <a href="" class="bottom bottom-valor">
+                        <a href="https://pay.kiwify.com.br/mkcDzRu" class="bottom bottom-valor">
                             SIM! QUERO CORTAR ESSE VÍNCULO DE VEZ
                         </a>
                     </div>
@@ -6465,7 +6470,7 @@
             </div>
             <div class="faixa">
                 <h2 class="split-words">
-                    Novas aulas toda semana!
+                    Chegou a hora de romper padrões negativos e ser feliz!
                 </h2>
             </div>
             <div class="secao-13">
@@ -6546,11 +6551,13 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    Funciona, porque o Método Ruptura não foi criado para decidir por você, e sim para
+                                    te devolver clareza emocional. Você pode estar na relação e, ainda assim, começar a
+                                    romper com a dependência afetiva, com a culpa constante e com o medo de ficar
+                                    sozinha. O processo atua no fortalecimento interno, na regulação emocional e na
+                                    reconstrução da identidade. Quando isso acontece, você deixa de reagir e passa a
+                                    escolher. A decisão de ficar ou sair deixa de ser movida pela dor e passa a ser
+                                    sustentada pela consciência.
                                 </p>
                             </div>
                         </div>
@@ -6570,11 +6577,13 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    Vai, porque amor não é o que mantém o vínculo. O que prende é a dependência
+                                    emocional construída ao longo de ciclos de aproximação e afastamento, promessas e
+                                    frustrações. O Método Ruptura atua na desintoxicação emocional e na reorganização
+                                    das crenças que sustentam esse laço. Você não precisa deixar de amar para se
+                                    libertar. Precisa deixar de se abandonar. Quando a dependência diminui, o amor deixa
+                                    de doer e a liberdade começa a se estabelecer.
+
                                 </p>
                             </div>
                         </div>
@@ -6594,11 +6603,11 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    É diferente porque é método. A terapia é um processo clínico aberto, profundo e
+                                    contínuo. O Ruptura é um protocolo estruturado, com etapas claras, exercícios
+                                    direcionados e ferramentas práticas para o corte do vínculo emocional disfuncional.
+                                    Ele não substitui a terapia, mas acelera a consciência, organiza o processo e ajuda
+                                    a sustentar decisões com mais firmeza e autonomia emocional.
                                 </p>
                             </div>
                         </div>
@@ -6618,11 +6627,12 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    Porque isso não é falta de força, é funcionamento do sistema nervoso. Relações
+                                    marcadas por instabilidade emocional alteram padrões de apego, elevam o cortisol e
+                                    condicionam o cérebro a buscar quem também machuca. O corpo entra em modo de
+                                    sobrevivência e a mente confunde dor com vínculo. Superar exige estratégia,
+                                    regulação emocional e reconstrução interna. Sozinha, você luta contra sentimentos.
+                                    Com método, você trabalha com consciência.
                                 </p>
                             </div>
                         </div>
@@ -6642,11 +6652,11 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    O tempo varia conforme a profundidade do vínculo e a história emocional de cada
+                                    mulher, mas quando existe direção, o sofrimento deixa de ser confuso. A clareza
+                                    surge, a culpa diminui e os limites se fortalecem. Libertação não é esquecer alguém,
+                                    é deixar de se perder por ele. E esse processo começa no momento em que você entende
+                                    o que está vivendo.
                                 </p>
                             </div>
                         </div>
@@ -6666,11 +6676,11 @@
                         <div class="faq-answer-wrapper">
                             <div class="faq-answer">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Incidunt, voluptate quod
-                                    obcaecati
-                                    voluptates, sed deleniti, possimus consequatur dolor corporis aliquam laboriosam
-                                    adipisci
-                                    illum neque esse blanditiis officia ullam dicta distinctio.
+                                    Recaída não é fracasso, é parte do descondicionamento emocional. O Método Ruptura
+                                    prepara você para reconhecer gatilhos, interromper impulsos e sustentar decisões
+                                    mesmo nos momentos de saudade e vulnerabilidade. O objetivo não é nunca sentir, é
+                                    não voltar a se trair. Liberdade emocional não é perfeição, é consistência. E uma
+                                    identidade fortalecida não retorna para aquilo que a diminui.
                                 </p>
                             </div>
                         </div>
